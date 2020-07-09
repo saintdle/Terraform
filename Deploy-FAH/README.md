@@ -3,7 +3,7 @@ Terraform files for deploying VMware Folding@Home appliance to your vSphere envi
 Currently configured for deployment to a network with DHCP.
 
 #  Usage
-Edit the variables.tf file
+Edit the terraform.tfvars file
 Edit the main.tf file in the fah_appliance module folder, set your F@H username and passkey. Change CPU and Memory as needed.
 
 #  Tested
