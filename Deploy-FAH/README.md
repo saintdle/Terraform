@@ -1,12 +1,13 @@
 #  Description
-Terraform files for deploying VMware Folding@Home appliance to your vSphere environment. 
+Terraform files for deploying VMware Folding@Home appliance to your vSphere environment.
+Currently configured for deployment to a network with DHCP.
 
 #  Usage
 Edit the variables.tf file
 Edit the main.tf file in the fah_appliance module folder, set your F@H username and passkey. Change CPU and Memory as needed.
 
 #  Tested
-Tested with VMware Cloud on AWS and Terraform 0.12.18
+Tested with VMware Cloud on AWS and Terraform 0.12.18, vSphere provider 1.21
 
 #  Known issues
 Memory does not set correctly, sticks to 1GB as per OVA appliance
