@@ -15,6 +15,7 @@ Tested with VMware Cloud on AWS and Terraform 0.12.18, vSphere provider 1.21
 
 #  Known issues
 * Memory does not set correctly, sticks to 1GB as per OVA appliance
+* * [Github Issue logged](https://github.com/hashicorp/terraform-provider-vsphere/issues/1130)
 * Specifying the datacenter name in the fah_module as a variable from the terraform.tfvars file provides an error 
 
 #  Resources
