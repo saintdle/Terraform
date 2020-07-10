@@ -19,6 +19,6 @@ Tested with VMware Cloud on AWS and Terraform 0.12.18, vSphere provider 1.21
 * Specifying the datacenter name in the fah_module as a variable from the terraform.tfvars file provides an error 
 
 #  Resources
-* VMware Folding@Home Appliance: https://flings.vmware.com/vmware-appliance-for-folding-home/bugs/972
+* VMware Folding@Home Appliance: https://flings.vmware.com/vmware-appliance-for-folding-home/
 * Folding@Home Passkey: https://foldingathome.org/support/faq/points/passkey/
 * Personal blog: https://veducate.co.uk
