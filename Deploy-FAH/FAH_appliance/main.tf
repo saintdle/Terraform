@@ -31,8 +31,9 @@ resource "vsphere_virtual_machine" "vm" {
   host_system_id = "${data.vsphere_host.host.id}"
 
   ovf_deploy {
-	// Path to local ovf/ova file
+	// Path to local ovf/ova file comment this line, and uncomment the next, to use remote OVA instead.
 	local_ovf_path = "${var.ova_location}"
+  //remote_ovf_url = "https://download3.vmware.com/software/vmw-tools/VMWare_Folding@Home_Appliance/VMware-Appliance-FaH_1.0.4.ova"
    disk_provisioning    = "thin"
    ovf_network_map = {
         "VM Network" = data.vsphere_network.network.id

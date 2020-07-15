@@ -31,5 +31,5 @@ vsphere_resource_pool = "folding@home"
 // Name of VM folder to be created. E.g "FAH-VMs"
 vsphere_vm_folder = "folding@home"
 
-//Location of OVA file
+//Location of OVA file - Change Deploy-FAH/FAH_appliance/main.tf to use remote OVA instead. 
 ova_location = "/home/ubuntu/Deploy-FAH/VMware-Appliance-FaH_1.0.4.ova"
