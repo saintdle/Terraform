@@ -1,5 +1,4 @@
 provider "vsphere" {
-  version       	   = "1.21.0"
   user                 = "${var.vsphere_user}"
   password             = "${var.vsphere_password}"
   vsphere_server       = "${var.vsphere_server}"
@@ -28,15 +27,20 @@ module "resource_pool" {
 module "fah_appliance" {
   source = "./FAH_appliance"
 
-  name             = "sc-dc-net0"
+  name             = "${var.vm_name}"
   instance_count   = "${var.instance_count}"
   resource_pool_id = "${module.resource_pool.pool_id}"
   folder           = "${module.folder.path}"
   datastore        = "${var.vsphere_datastore}"
   network          = "${var.vm_network}"
   datacenter_id    = "${data.vsphere_datacenter.dc.id}"
-  host			   = "${var.vsphere_host}"
-  memory           = 4096
-  num_cpu          = 16
-  ova_location     = "${var.ova_location}"
+  host			       = "${var.vsphere_host}"
+  memory           = "${var.memory}"
+  num_cpu          = "${var.num_cpu}"
+  local_ovf_path   = "${var.local_ovf_path}"
+  remote_ovf_path  = "${var.remote_ovf_path}"
+  ssh_enable       = "${var.ssh_enable}"
+  root_password    = "${var.root_password}"
+  fah_user         = "${var.fah_user}"
+  fah_team         = "${var.fah_team}"
 }

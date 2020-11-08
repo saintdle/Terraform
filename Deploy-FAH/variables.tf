@@ -63,3 +63,48 @@ variable "ova_location" {
   description = "This is the complete path with file name location of the OVA."
 }
 
+variable "num_cpu" {
+  type        = "string"
+  description = "This is the number of CPUs to be set for the deployed VM."
+}
+
+variable "memory" {
+  type        = "string"
+  description = "This is the memory in MB to be set for the deployed VM."
+}
+
+variable "vm_name" {
+  type        = "string"
+  description = "The base name of the virtual machine deployed."
+}
+
+variable "root_password" {
+  type        = "string"
+  description = "This is the password for the root account for the FAH appliance deployed."
+}
+
+variable "fah_user" {
+  type = "string"
+  description = "This is the FAH Username you wish to be associated with in the statistic tables"
+}
+
+variable "fah_team" {
+  type        = "string"
+  description = "The FAH Team ID you want to be associated with in the statistic tables"
+}
+
+variable "fah_passkey" {
+  type        = "string"
+  description = "The FAH passkey used to verify your account in the statistical tables (optional to use from FAH offering)"
+}
+
+variable "local_ovf_path" {
+  type        = string
+  description = "This is the complete local path with file name location of the OVA."
+  default     = ""
+}
+variable "remote_ovf_url" {
+  type        = string
+  description = "This is the complete remote path with file name location of the OVA."
+  default   = ""
+}

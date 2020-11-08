@@ -39,6 +39,37 @@ variable "instance_count" {
   type = "string"
 }
 
-variable "ova_location" {
+variable "vm_name" {
   type = "string"
+}
+
+variable "ssh_enable" {
+  type = "string"
+}
+
+variable "root_password" {
+  type        = "string"
+  default     = "VMware1!"
+}
+
+variable "fah_user" {
+  type = "string"
+}
+
+variable "fah_team" {
+  type        = "string"
+  default     = "52737"
+}
+
+variable "fah_passkey" {
+  type        = "string"
+}
+
+variable "local_ovf_path" {
+  type    = string
+  default = ""
+}
+variable "remote_ovf_url" {
+  type    = string
+  default = ""
 }

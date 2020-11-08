@@ -25,11 +25,38 @@ vm_network = "VLAN20"
 // Number of instances to deploy
 instance_count = 5
 
-// Name of vSphere Resouce to be created. E.g "FAH-VMs"
+// VM Machine Name (an index will be appended i.e FAH-1, FAH-2,)
+vm_name = "fah-"
+
+// Number of CPUs to set on deployed Virtual Machines
+num_cpus = 8
+
+// Memory to set on deployed Virtual Machines (in MB)
+memory = 4096
+
+// Name of vSphere Resouce Pool to be created. E.g "FAH-VMs"
 vsphere_resource_pool = "folding@home"
 
 // Name of VM folder to be created. E.g "FAH-VMs"
 vsphere_vm_folder = "folding@home"
 
-//Location of OVA file
-ova_location = "/home/ubuntu/Deploy-FAH/VMware-Appliance-FaH_1.0.4.ova"
+// Location of OVA file if using a local location - if using remote location, leave this as null
+local_ovf_path = "/home/ubuntu/Deploy-FAH/VMware-Appliance-FaH_1.0.4.ova"
+
+// Location of OVA file if using a remote location - if using local location, leave this as null
+remote_ovf_path = "https://veducate.co.uk/some.ova"
+
+// Enable SSH in FAH Appliance (True or False)
+ssh_enable = "True"
+
+// FAH appliance root password
+root_password = "VMware1!"
+
+// FAH Username you wish to be associated with in the statistics tables
+fah_user = "saintdle"
+
+// FAH Team you wish to be associated with in the statistics tables
+fah_team = "52737"
+
+// FAH Passkey to verify your user in the statistical tables (this is optional from FAH project)
+fah_passkey = "unique_id"
