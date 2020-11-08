@@ -2,6 +2,10 @@
 Terraform files for deploying VMware Folding@Home appliance to your vSphere environment.
 Currently configured for deployment to a network with DHCP.
 
+# Update - 8th Nov 2020
+Currently the latest files have been updated to handle more variables and different OVF deployment options (local/remote). This is not fully tested yet.
+Refer to previous commits for older tested files. 
+
 #  Usage
 Edit the terraform.tfvars file with your vSphere details and OVA location
 
