@@ -34,6 +34,7 @@ module "fah_appliance" {
   datastore        = "${var.vsphere_datastore}"
   network          = "${var.vm_network}"
   datacenter_id    = "${data.vsphere_datacenter.dc.id}"
+  vsphere_datacenter = "${var.vsphere_datacenter}"
   host			       = "${var.vsphere_host}"
   memory           = "${var.memory}"
   num_cpu          = "${var.num_cpu}"

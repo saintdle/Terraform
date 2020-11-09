@@ -14,14 +14,14 @@ data "vsphere_host" "host" {
 }
 
 data "vsphere_datacenter" "dc" {
-  name = "SDDC-Datacenter"
+  name = "${var.vsphere_datacenter}"
 }
 
 resource "vsphere_virtual_machine" "vm" {
   count			   = "${var.instance_count}"
   name             = "${var.name}${count.index}"
   resource_pool_id = "${var.resource_pool_id}"
-  datastore_id     = "${data.vsphere_datastore.datastore.id}"
+  datastore_id     = "${var.datacenter_id}"
   num_cpus         = "${var.num_cpu}"
   memory           = "${var.memory}"
   folder           = "${var.folder}"
@@ -31,14 +31,16 @@ resource "vsphere_virtual_machine" "vm" {
   host_system_id = "${data.vsphere_host.host.id}"
 
   dynamic "ovf_deploy" {
-  for_each = "${var.remote_ovf_url}" != "" || "${var.local_ovf_path}" != "" ? [0] : []
-	// Path to local or remote ovf/ova file
-	local_ovf_path = "${var.local_ovf_path}" != "" ? "${var.local_ovf_path}" : null
+  for_each = "${var.local_ovf_path}" != "" || "${var.remote_ovf_path}" != "" ? [0] : []
+  content {
+  // Path to local or remote ovf/ova file
+  local_ovf_path = "${var.local_ovf_path}" != "" ? "${var.local_ovf_path}" : null
   remote_ovf_url = "${var.remote_ovf_url}" != "" ? "${var.remote_ovf_url}" : null
    disk_provisioning    = "thin"
    ovf_network_map = {
         "VM Network" = data.vsphere_network.network.id
     }
+   }
   }
 
   vapp {
