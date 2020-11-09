@@ -39,7 +39,7 @@ module "fah_appliance" {
   memory           = "${var.memory}"
   num_cpu          = "${var.num_cpu}"
   local_ovf_path   = "${var.local_ovf_path}"
-  remote_ovf_path  = "${var.remote_ovf_path}"
+  remote_ovf_url  = "${var.remote_ovf_path}"
   ssh_enable       = "${var.ssh_enable}"
   root_password    = "${var.root_password}"
   fah_user         = "${var.fah_user}"
