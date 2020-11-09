@@ -35,7 +35,7 @@ resource "vsphere_virtual_machine" "vm" {
   content {
   // Path to local or remote ovf/ova file
   local_ovf_path = "${var.local_ovf_path}" != "" ? "${var.local_ovf_path}" : null
-  remote_ovf_url = "${var.remote_ovf_url}" != "" ? "${var.remote_ovf_url}" : null
+  remote_ovf_url = "${var.remote_ovf_path}" != "" ? "${var.remote_ovf_path}" : null
    disk_provisioning    = "thin"
    ovf_network_map = {
         "VM Network" = data.vsphere_network.network.id
