@@ -99,8 +99,14 @@ variable "local_ovf_path" {
   description = "This is the complete local path with file name location of the OVA."
   default     = ""
 }
-variable "remote_ovf_url" {
+variable "remote_ovf_path" {
   type        = string
   description = "This is the complete remote path with file name location of the OVA."
   default   = ""
+}
+
+variable "ssh_enable" {
+  type        = string
+  description = "This is to enable or disable SSH on the OVA."
+  default   = "True"
 }
