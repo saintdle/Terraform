@@ -70,7 +70,7 @@ variable "local_ovf_path" {
   type    = string
   default = ""
 }
-variable "remote_ovf_url" {
+variable "remote_ovf_path" {
   type    = string
   default = ""
 }
