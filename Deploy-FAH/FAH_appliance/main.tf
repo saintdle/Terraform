@@ -14,7 +14,7 @@ data "vsphere_host" "host" {
 }
 
 data "vsphere_datacenter" "dc" {
-  name = "SDDC-Datacenter"
+  name = "${var.vsphere_datacenter}"
 }
 
 resource "vsphere_virtual_machine" "vm" {
@@ -31,14 +31,16 @@ resource "vsphere_virtual_machine" "vm" {
   host_system_id = "${data.vsphere_host.host.id}"
 
   dynamic "ovf_deploy" {
-  for_each = "${var.remote_ovf_url}" != "" || "${var.local_ovf_path}" != "" ? [0] : []
-	// Path to local or remote ovf/ova file
-	local_ovf_path = "${var.local_ovf_path}" != "" ? "${var.local_ovf_path}" : null
-  remote_ovf_url = "${var.remote_ovf_url}" != "" ? "${var.remote_ovf_url}" : null
+  for_each = "${var.local_ovf_path}" != "" || "${var.remote_ovf_path}" != "" ? [0] : []
+  content {
+  // Path to local or remote ovf/ova file
+  local_ovf_path = "${var.local_ovf_path}" != "" ? "${var.local_ovf_path}" : null
+  remote_ovf_url = "${var.remote_ovf_path}" != "" ? "${var.remote_ovf_path}" : null
    disk_provisioning    = "thin"
    ovf_network_map = {
         "VM Network" = data.vsphere_network.network.id
     }
+   }
   }
 
   vapp {

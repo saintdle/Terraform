@@ -58,11 +58,6 @@ variable "vsphere_host" {
   description = "This is the name of host to deploy the VM to in the cluster."
 }
 
-variable "ova_location" {
-  type        = "string"
-  description = "This is the complete path with file name location of the OVA."
-}
-
 variable "num_cpu" {
   type        = "string"
   description = "This is the number of CPUs to be set for the deployed VM."
@@ -96,6 +91,7 @@ variable "fah_team" {
 variable "fah_passkey" {
   type        = "string"
   description = "The FAH passkey used to verify your account in the statistical tables (optional to use from FAH offering)"
+  default     = ""
 }
 
 variable "local_ovf_path" {
@@ -103,8 +99,14 @@ variable "local_ovf_path" {
   description = "This is the complete local path with file name location of the OVA."
   default     = ""
 }
-variable "remote_ovf_url" {
+variable "remote_ovf_path" {
   type        = string
   description = "This is the complete remote path with file name location of the OVA."
   default   = ""
+}
+
+variable "ssh_enable" {
+  type        = string
+  description = "This is to enable or disable SSH on the OVA."
+  default   = "True"
 }

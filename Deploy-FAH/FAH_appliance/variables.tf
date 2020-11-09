@@ -22,6 +22,10 @@ variable "datacenter_id" {
   type = "string"
 }
 
+variable "vsphere_datacenter" {
+  type = "string"
+}
+
 variable "host" {
   type = "string"
 }
@@ -36,10 +40,6 @@ variable "num_cpu" {
 }
 
 variable "instance_count" {
-  type = "string"
-}
-
-variable "vm_name" {
   type = "string"
 }
 
@@ -63,13 +63,14 @@ variable "fah_team" {
 
 variable "fah_passkey" {
   type        = "string"
+  default     = ""
 }
 
 variable "local_ovf_path" {
   type    = string
   default = ""
 }
-variable "remote_ovf_url" {
+variable "remote_ovf_path" {
   type    = string
   default = ""
 }
