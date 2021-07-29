@@ -23,7 +23,7 @@ Terraform vSphere Provider 1.25.0 + 2.0.2
 
 You will get warnings such as the below when running "terraform apply", because I didn't get around to fixing the syntax for the later versions of Terraform.
 
-'''
+~~~
 
 Warning: Interpolation-only expressions are deprecated
 
@@ -54,4 +54,4 @@ Terraform. To silence this warning, remove the quotes around "string".
 
 (and 35 more similar warnings elsewhere)
 
-'''
+~~~
