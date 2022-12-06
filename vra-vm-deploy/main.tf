@@ -16,11 +16,6 @@ data "vsphere_datastore" "datastore" {
   datacenter_id = data.vsphere_datacenter.dc.id
 }
 
-data "vsphere_resource_pool" "pool" {
-  name          = "deanl-tf-demo"
-  datacenter_id = data.vsphere_datacenter.dc.id
-}
-
 data "vsphere_network" "network" {
   name          = "Freale_NW1"
   datacenter_id = data.vsphere_datacenter.dc.id
